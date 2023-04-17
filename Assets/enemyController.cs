@@ -13,7 +13,7 @@ public class enemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0,0.1f,0);
+        transform.Translate(0,0.15f,0);
         if (transform.position.y < -6.0f)
         {
             Destroy(gameObject);

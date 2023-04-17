@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
-    
     }
 
     // Update is called once per frame
@@ -23,14 +22,11 @@ public class PlayerController : MonoBehaviour
             transform.Translate(0, -0.2f, 0);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            // if (Input.GetKeyDown(KeyCode.LeftArrow))
-            
+        {   
             transform.Translate(-0.2f, 0, 0);
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
-         //   if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             transform.Translate(0.2f, 0, 0);
         }
