@@ -31,4 +31,9 @@ public class PlayerController : MonoBehaviour
             transform.Translate(0.2f, 0, 0);
         }
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+    }
 }
+
