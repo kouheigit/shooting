@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    AudioSource audioSource;
+   
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        Application.targetFrameRate = 60;    
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
     void Update()
     {
+      
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            audioSource.PlayOneShot(audioSource.clip);
+            GetComponent<AudioSource>().Play();
             transform.Translate(0, 0.2f, 0);
         }
         if (Input.GetKey(KeyCode.DownArrow))
@@ -36,7 +36,9 @@ public class PlayerController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
+        GetComponent<AudioSource>().Play();
         Destroy(gameObject);
     }
+    
 }
 
