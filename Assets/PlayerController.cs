@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
+            //GetComponent<AudioSource>().Play();
             transform.Translate(0, 0.2f, 0);
         }
         if (Input.GetKey(KeyCode.DownArrow))
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);
+        //GetComponent<AudioSource>().Play();
     }
 }
 
