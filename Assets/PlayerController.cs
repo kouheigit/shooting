@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         Application.targetFrameRate = 60;    
     }
 
@@ -15,6 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
+            audioSource.PlayOneShot(audioSource.clip);
             transform.Translate(0, 0.2f, 0);
         }
         if (Input.GetKey(KeyCode.DownArrow))
