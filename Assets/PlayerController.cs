@@ -14,10 +14,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            GetComponent<AudioSource>().Play();
             transform.Translate(0, 0.2f, 0);
         }
         if (Input.GetKey(KeyCode.DownArrow))
@@ -25,7 +24,7 @@ public class PlayerController : MonoBehaviour
             transform.Translate(0, -0.2f, 0);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
-        {   
+        {
             transform.Translate(-0.2f, 0, 0);
         }
 
@@ -36,9 +35,7 @@ public class PlayerController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        GetComponent<AudioSource>().Play();
         Destroy(gameObject);
     }
-    
 }
 
