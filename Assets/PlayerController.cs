@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +34,15 @@ public class PlayerController : MonoBehaviour
             transform.Translate(0.2f, 0, 0);
         }
     }
+    
     void OnTriggerEnter2D(Collider2D collision)
     {
-        GetComponent<AudioSource>().Play();
         Destroy(gameObject);
     }
+    /*
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        Debug.Log("miya");
+    }*/
 }
 
