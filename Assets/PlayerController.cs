@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
+    public AudioClip clip;
     // Start is called before the first frame update
     void Start()
     {
+
         Application.targetFrameRate = 60;
+
     }
 
     // Update is called once per frame
@@ -37,7 +39,9 @@ public class PlayerController : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collision)
     {
+        //GetComponent<AudioSource>().Play();
         Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(clip, transform.position);
     }
     /*
     void OnCollisionExit2D(Collision2D collision)
