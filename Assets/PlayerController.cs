@@ -39,10 +39,10 @@ public class PlayerController : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    
+    /*
     void OnCollisionExit2D(Collision2D collision)
     {
         Debug.Log("miya");
-    }
+    }*/
 }
 
