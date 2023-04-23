@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//animation start
 public class PlayerController : MonoBehaviour
 {
     public AudioClip clip;
