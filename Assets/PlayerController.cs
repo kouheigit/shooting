@@ -9,9 +9,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //荻津組組長
         Application.targetFrameRate = 60;
-
     }
 
     // Update is called once per frame
