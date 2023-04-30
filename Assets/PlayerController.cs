@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.Translate(0, -0.2f, 0);
+            GetComponent<ParticleSystem>().Play();
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
