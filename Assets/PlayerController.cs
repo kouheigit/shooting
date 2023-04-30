@@ -5,11 +5,17 @@ using UnityEngine;
 //animation start
 public class PlayerController : MonoBehaviour
 {
+    //仮追加
+    [SerializeField]
+    [Tooltip("発生させるエフェクト(パーティクル)")]
+    //仮追加
+    private ParticleSystem particle;
     public AudioClip clip;
     // Start is called before the first frame update
     void Start()
     {
         Application.targetFrameRate = 60;
+
     }
 
     // Update is called once per frame
@@ -24,7 +30,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.Translate(0, -0.2f, 0);
-            GetComponent<ParticleSystem>().Play();
+           // GetComponent<ParticleSystem>().Play();
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -37,16 +43,23 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    void OnTriggerEnter2D(Collider2D collision)
+
+void OnTriggerEnter2D(Collider2D collision)
     {
-        //GetComponent<AudioSource>().Play();
-        Destroy(gameObject);
+        //仮追加
+        if (collision.gameObject.tag == "Enemy")
+        {
+            ParticleSystem newParticle = Instantiate(particle);
+            // パーティクルの発生場所をこのスクリプトをアタッチしているGameObjectの場所にする。
+            newParticle.transform.position = this.transform.position;
+            // パーティクルを発生させる。
+            newParticle.Play();
+            // インスタンス化したパーティクルシステムのGameObjectを削除する。(任意)
+            // ※第一引数をnewParticleだけにするとコンポーネントしか削除されない。
+            Destroy(newParticle.gameObject, 5.0f);
+        }
+            Destroy(gameObject);
         AudioSource.PlayClipAtPoint(clip, transform.position);
     }
-    /*
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        Debug.Log("miya");
-    }*/
 }
 
