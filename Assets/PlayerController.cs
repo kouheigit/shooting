@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
 void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        //なめだるまじゃん
         if (collision.gameObject.tag == "Enemy")
         {
             ParticleSystem newParticle = Instantiate(particle);
