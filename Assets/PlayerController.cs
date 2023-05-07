@@ -5,7 +5,7 @@ using UnityEngine;
 //animation start
 public class PlayerController : MonoBehaviour
 {
-    //仮追加
+    //なめだるまじゃん
     [SerializeField]
     [Tooltip("発生させるエフェクト(パーティクル)")]
     //仮追加
