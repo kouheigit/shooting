@@ -5,7 +5,9 @@ using UnityEngine;
 //animation start
 public class PlayerController : MonoBehaviour
 {
-    //なめだるまじゃん
+
+    public GameObject bulletPrefab;
+
     [SerializeField]
     [Tooltip("発生させるエフェクト(パーティクル)")]
     //仮追加
@@ -40,6 +42,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(0.2f, 0, 0);
+        }
+        //弾の発射
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+           // AudioSource.PlayClipAtPoint(clip, transform.position);
+            Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         }
     }
     
