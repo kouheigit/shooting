@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     //仮追加
     private ParticleSystem particle;
     public AudioClip clip;
+    public AudioClip clip1;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,8 +47,8 @@ public class PlayerController : MonoBehaviour
         //弾の発射
         if (Input.GetKeyDown(KeyCode.Space))
         {
-           // AudioSource.PlayClipAtPoint(clip, transform.position);
             Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            AudioSource.PlayClipAtPoint(clip1, transform.position);
         }
     }
     

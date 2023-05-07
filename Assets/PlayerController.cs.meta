@@ -4,7 +4,10 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - se1: {fileID: 8300000, guid: 60b018729f25b42f7bd4acab39342f59, type: 3}
+  - bulletPrefab: {instanceID: 0}
+  - particle: {instanceID: 0}
+  - clip: {fileID: 8300000, guid: e67cadd648f0545c4a3bd9be693d2ade, type: 3}
+  - clip1: {fileID: 8300000, guid: e67cadd648f0545c4a3bd9be693d2ade, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

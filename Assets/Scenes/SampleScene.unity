@@ -310,6 +310,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3596353319792417119, guid: 4122ec09d524341de95073d1120c4835, type: 3}
   particle: {fileID: 3827050819135433787, guid: 327fc817a82624a4097ef6520842157b, type: 3}
   clip: {fileID: 8300000, guid: 60b018729f25b42f7bd4acab39342f59, type: 3}
+  clip1: {fileID: 8300000, guid: e67cadd648f0545c4a3bd9be693d2ade, type: 3}
 --- !u!58 &971441196
 CircleCollider2D:
   m_ObjectHideFlags: 0
