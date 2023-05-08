@@ -27,9 +27,12 @@ public class enemyController : MonoBehaviour
         }
         
     }
-    /*
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
 
-    }*/
+    }
 }
