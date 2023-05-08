@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 3827050819135433787, guid: 327fc817a82624a4097ef6520842157b, type: 3}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 60b018729f25b42f7bd4acab39342f59, type: 3}
   clip1: {fileID: 0}
 --- !u!58 &1560407531
 CircleCollider2D:

@@ -41,5 +41,6 @@ public class enemyController : MonoBehaviour
             Destroy(newParticle.gameObject, 5.0f);
         }
         Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(clip, transform.position);
     }
 }
