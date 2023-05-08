@@ -4,6 +4,13 @@ using UnityEngine;
 //なめだるまジャン
 public class enemyController : MonoBehaviour
 {
+    [SerializeField]
+    [Tooltip("発生させるエフェクト(パーティクル)")]
+    //仮追加
+    private ParticleSystem particle;
+    public AudioClip clip;
+    public AudioClip clip1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,4 +27,9 @@ public class enemyController : MonoBehaviour
         }
         
     }
+    /*
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+
+    }*/
 }
