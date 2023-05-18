@@ -8,6 +8,20 @@ public class EnemyGenerator : MonoBehaviour
     //float span = 0.5f;
     float delta = 0;
 
+    //新追加
+    GameObject　newpointtext;
+
+    //追加した
+    GameObject director;
+    //追加した
+    
+
+    //追加した(Start メソット)
+    void Start()
+    {
+        this.director = GameObject.Find("GameDirector");
+    }
+
     void level(float num)
     {
         float span = num;
@@ -24,13 +38,34 @@ public class EnemyGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //難易度　普通
-        //level(1.0f);
 
-        //難易度　難
-        level(0.5f);
+        //GameComponentで値を呼び出す時は intメソットにしてreturn値にする。
+        int point = this.director.GetComponent<GameDirector>().ShowPoint();
 
-        //難易度　激難
-        //level(0.1f);
-    }
+        //Debug.Log(point);
+
+        if(point > 100)
+        {            //難易度　激難
+            level(0.1f);
+        }
+        else if (point > 10){
+            //難易度　難しい
+            level(0.5f);
+        }else{
+            //難易度　簡単
+            level(1.0f);
+        }
+
+
+     /*
+            //難易度　簡単
+            level(1.0f);
+            
+            //難易度　難しい
+            　level(0.5f);
+        
+            //難易度　激難
+            level(0.1f);*/
+        }
+    
 }
