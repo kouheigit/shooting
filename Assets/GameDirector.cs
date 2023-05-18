@@ -12,6 +12,12 @@ public class GameDirector : MonoBehaviour
     {
         this.point += 1;
     }
+
+    public void ShowPoint()
+    {
+        int points = this.point;
+        Debug.Log(points);
+    }
     // Start is called before the first frame update
     void Start()
     {
