@@ -10,11 +10,12 @@ public class enemyController : MonoBehaviour
     private ParticleSystem particle;
     public AudioClip clip;
     public AudioClip clip1;
+    GameObject director;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.director = GameObject.Find("GameDirector");
     }
 
     // Update is called once per frame
@@ -39,6 +40,9 @@ public class enemyController : MonoBehaviour
             // インスタンス化したパーティクルシステムのGameObjectを削除する。(任意)
             // ※第一引数をnewParticleだけにするとコンポーネントしか削除されない。
             Destroy(newParticle.gameObject, 5.0f);
+
+            //得点加算追加した
+            this.director.GetComponent<GameDirector>().AddPoint();
         }
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(clip, transform.position);
