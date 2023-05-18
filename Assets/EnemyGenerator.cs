@@ -25,10 +25,10 @@ public class EnemyGenerator : MonoBehaviour
     void Update()
     {
         //難易度　普通
-        level(1.0f);
+        //level(1.0f);
 
         //難易度　難
-        //level(0.5f);
+        level(0.5f);
 
         //難易度　激難
         //level(0.1f);
