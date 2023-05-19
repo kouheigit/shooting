@@ -44,12 +44,15 @@ public class EnemyGenerator : MonoBehaviour
 
         //Debug.Log(point);
 
-        if(point > 100)
-        {            //難易度　激難
+        if (point > 100)
+        {
+            //難易度　激難
             level(0.1f);
-        }
-        else if (point > 10){
-            //難易度　難しい
+        }else if(point > 50){
+            //難易度難
+            level(0.3f);
+        }else if (point > 10){
+            //難易度　普通
             level(0.5f);
         }else{
             //難易度　簡単
