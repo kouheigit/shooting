@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //animation start
 public class PlayerController : MonoBehaviour
@@ -18,7 +19,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
-
+        
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
+            
             //GetComponent<AudioSource>().Play();
             transform.Translate(0, 0.2f, 0);
         }
@@ -51,11 +53,27 @@ public class PlayerController : MonoBehaviour
             AudioSource.PlayClipAtPoint(clip1, transform.position);
         }
     }
-    
-
-void OnTriggerEnter2D(Collider2D collision)
+    //コルーチンが OnTriggerEnter2Dメソットの中で発動しない
+    void Gameover()
     {
-        //なめだるまじゃん
+        StartCoroutine("Sample");
+        Debug.Log("GameOVER");
+    }
+
+    //コルーチン
+    IEnumerator Sample()
+    {
+        yield return new WaitForSeconds(3f);
+        Debug.Log("test");
+        //ここのメゾットに処理をしたいのではなく
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        //StartCoroutine("Sample");
+
+
+        //プレイヤーが破壊された時の動作
         if (collision.gameObject.tag == "Enemy")
         {
             ParticleSystem newParticle = Instantiate(particle);
@@ -66,9 +84,15 @@ void OnTriggerEnter2D(Collider2D collision)
             // インスタンス化したパーティクルシステムのGameObjectを削除する。(任意)
             // ※第一引数をnewParticleだけにするとコンポーネントしか削除されない。
             Destroy(newParticle.gameObject, 5.0f);
+            //追加
+            // StartCoroutine("Sample");
+            
         }
-            Destroy(gameObject);
         AudioSource.PlayClipAtPoint(clip, transform.position);
+        Destroy(gameObject);
+        //コルーチンテストメソットGameOverメソットだけ起動してコルーチンメソットのSampleメソットは起動しない
+        Gameover();
     }
+
 }
 
