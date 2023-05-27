@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        //指男
         //StartCoroutine("Sample");
 
 
