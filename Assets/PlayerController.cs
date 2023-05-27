@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Sample()
     {
         yield return new WaitForSeconds(3f);
-        Debug.Log("test");
+        Debug.Log("コルーチン成功");
         //ここのメゾットに処理をしたいのではなく
     }
 
