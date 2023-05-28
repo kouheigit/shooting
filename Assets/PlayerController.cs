@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            
             //GetComponent<AudioSource>().Play();
             transform.Translate(0, 0.2f, 0);
         }
@@ -70,10 +69,8 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //指男
+        Gameover();
         //StartCoroutine("Sample");
-
-
         //プレイヤーが破壊された時の動作
         if (collision.gameObject.tag == "Enemy")
         {
@@ -92,7 +89,6 @@ public class PlayerController : MonoBehaviour
         AudioSource.PlayClipAtPoint(clip, transform.position);
         Destroy(gameObject);
         //コルーチンテストメソットGameOverメソットだけ起動してコルーチンメソットのSampleメソットは起動しない
-        Gameover();
     }
 
 }
