@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameDirector : MonoBehaviour
 {
@@ -21,14 +22,14 @@ public class GameDirector : MonoBehaviour
     }
     public void Show()
     {
-        Debug.Log("呼ばれた");
         StartCoroutine("Sample");
     }
     //Sample
      IEnumerator Sample()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Debug.Log("コルーチン成功");
+        SceneManager.LoadScene("ContinueScene");
         //ここのメゾットに処理をしたいのではなく
     }
 

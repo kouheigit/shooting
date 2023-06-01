@@ -55,25 +55,8 @@ public class PlayerController : MonoBehaviour
             AudioSource.PlayClipAtPoint(clip1, transform.position);
         }
     }
-    //コルーチンが OnTriggerEnter2Dメソットの中で発動しない
-    void Gameover()
-    {
-        StartCoroutine("Sample");
-        Debug.Log("GameOVER");
-    }
-
-    //コルーチン
-    IEnumerator Sample()
-    {
-        yield return new WaitForSeconds(3f);
-        Debug.Log("コルーチン成功");
-        //ここのメゾットに処理をしたいのではなく
-    }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Gameover();
-        //StartCoroutine("Sample");
         //プレイヤーが破壊された時の動作
         if (collision.gameObject.tag == "Enemy")
         {
@@ -85,8 +68,7 @@ public class PlayerController : MonoBehaviour
             // インスタンス化したパーティクルシステムのGameObjectを削除する。(任意)
             // ※第一引数をnewParticleだけにするとコンポーネントしか削除されない。
             Destroy(newParticle.gameObject, 5.0f);
-            //追加
-            // StartCoroutine("Sample");
+            //GameDirectorからコルーチンを呼び出す
             this.director.GetComponent<GameDirector>().Show();
 
         }
