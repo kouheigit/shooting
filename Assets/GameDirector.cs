@@ -19,7 +19,19 @@ public class GameDirector : MonoBehaviour
         return points;
        
     }
-    
+    public void Show()
+    {
+        Debug.Log("呼ばれた");
+        StartCoroutine("Sample");
+    }
+    //Sample
+     IEnumerator Sample()
+    {
+        yield return new WaitForSeconds(2f);
+        Debug.Log("コルーチン成功");
+        //ここのメゾットに処理をしたいのではなく
+    }
+
     // Start is called before the first frame update
     void Start()
     {

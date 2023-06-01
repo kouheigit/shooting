@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
 {
 
     public GameObject bulletPrefab;
+    GameObject director;
+
+
 
     [SerializeField]
     [Tooltip("発生させるエフェクト(パーティクル)")]
@@ -18,6 +21,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.director = GameObject.Find("GameDirector");
         Application.targetFrameRate = 60;
     }
 
@@ -83,7 +87,8 @@ public class PlayerController : MonoBehaviour
             Destroy(newParticle.gameObject, 5.0f);
             //追加
             // StartCoroutine("Sample");
-            
+            this.director.GetComponent<GameDirector>().Show();
+
         }
         AudioSource.PlayClipAtPoint(clip, transform.position);
         Destroy(gameObject);
