@@ -24,12 +24,11 @@ public class GameDirector : MonoBehaviour
     {
         StartCoroutine("Sample");
     }
-    //Sample
+
      IEnumerator Sample()
     {
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("ContinueScene");
-        //ここのメゾットに処理をしたいのではなく
     }
 
     // Start is called before the first frame update
