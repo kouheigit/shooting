@@ -11,14 +11,15 @@ public class GameDirector : MonoBehaviour
 
     int point = 0;
     int remain = 3;
-
-    public void AddPoint()
+    
+public void AddPoint()
     {
         this.point += 1;
     }
     public void Subremain()
     {
         this.remain -= 1;
+        
     }
 
     //public intで
