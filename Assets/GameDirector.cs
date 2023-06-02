@@ -43,6 +43,8 @@ public class GameDirector : MonoBehaviour
     IEnumerator Gamemethod()
     {
         yield return new WaitForSeconds(0.5f);
+        point = 0;
+        remain = 3;
         SceneManager.LoadScene("GameOver");
     }
 
@@ -69,9 +71,7 @@ public class GameDirector : MonoBehaviour
 
         if(remain == 0)
         { 
-            GameOver();
-            point = 0;
-            remain = 3;
+            GameOver(); 
         }
        // Debug.Log(remain);
     }
