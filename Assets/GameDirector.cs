@@ -10,16 +10,17 @@ public class GameDirector : MonoBehaviour
     GameObject remainText;
 
     int point = 0;
-    int remain = 3;
-    
-public void AddPoint()
+    //シーン遷移を使う際にポイントを維持するにはremainを使う
+    public static int remain = 3;
+   
+    public void AddPoint()
     {
         this.point += 1;
     }
     public void Subremain()
     {
-        this.remain -= 1;
-        
+        remain -= 1;
+        //0になったらゲームオーバーにする
     }
 
     //public intで
@@ -52,6 +53,6 @@ public void AddPoint()
     {
         this.pointText.GetComponent<TextMeshProUGUI>().text = this.point.ToString() + " point";
         //仮追加
-        this.remainText.GetComponent<TextMeshProUGUI>().text = this.remain.ToString() + "×"; ;
+        this.remainText.GetComponent<TextMeshProUGUI>().text = remain.ToString() + "×"; ;
     }
 }
