@@ -27,8 +27,7 @@ public class GameDirector : MonoBehaviour
     //Sample
      IEnumerator Sample()
     {
-        yield return new WaitForSeconds(1f);
-        Debug.Log("コルーチン成功");
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("ContinueScene");
         //ここのメゾットに処理をしたいのではなく
     }
