@@ -34,7 +34,14 @@ public class GameDirector : MonoBehaviour
     {
         StartCoroutine("Sample");
     }
+    
+    public void GameOver()
+    {
+        //点数の処理をする
+        SceneManager.LoadScene("GameOver");
+    }
 
+    
      IEnumerator Sample()
     {
         yield return new WaitForSeconds(0.5f);
@@ -57,6 +64,7 @@ public class GameDirector : MonoBehaviour
 
         if(remain == 0)
         {
+            GameOver();
             Debug.Log("残機の残りはゼロです");
         }
        // Debug.Log(remain);
