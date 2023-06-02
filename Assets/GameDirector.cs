@@ -38,10 +38,15 @@ public class GameDirector : MonoBehaviour
     public void GameOver()
     {
         //点数の処理をする
+        StartCoroutine("Gamemethod");
+    }
+    IEnumerator Gamemethod()
+    {
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("GameOver");
     }
 
-    
+
      IEnumerator Sample()
     {
         yield return new WaitForSeconds(0.5f);
@@ -63,9 +68,10 @@ public class GameDirector : MonoBehaviour
         this.remainText.GetComponent<TextMeshProUGUI>().text = remain.ToString() + "×";
 
         if(remain == 0)
-        {
+        { 
             GameOver();
-            Debug.Log("残機の残りはゼロです");
+            point = 0;
+            remain = 3;
         }
        // Debug.Log(remain);
     }
