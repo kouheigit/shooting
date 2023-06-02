@@ -18,9 +18,7 @@ public class GameDirector : MonoBehaviour
     }
     public void Subremain()
     {
-        if (remain < 0){
-            this.remain -= 1;
-        }
+        this.remain -= 1;
     }
 
     //public intで

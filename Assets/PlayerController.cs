@@ -70,7 +70,8 @@ public class PlayerController : MonoBehaviour
             Destroy(newParticle.gameObject, 5.0f);
             //GameDirectorからコルーチンを呼び出す
             this.director.GetComponent<GameDirector>().Show();
-
+            //試し
+            this.director.GetComponent<GameDirector>().Subremain();
         }
         AudioSource.PlayClipAtPoint(clip, transform.position);
         Destroy(gameObject);
